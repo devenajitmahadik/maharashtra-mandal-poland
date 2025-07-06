@@ -8,8 +8,6 @@ import Error from "./components/Error";
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 
-const About = lazy(() => import("./components/About"));
-
 const AppLayout = () => {
     return (
         <div className="app">
