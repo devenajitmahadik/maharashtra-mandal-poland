@@ -1,0 +1,21 @@
+{
+  "name": "maharashtra-mandal-poland",
+  "version": "1.0.0",
+  "description": "This is official website of Maharashtra Mandal Poland",
+  "type": "module",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "author": "Deven Mahadik",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router": "^7.6.3"
+  }
+}
