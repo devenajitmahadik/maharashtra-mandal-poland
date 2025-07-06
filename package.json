@@ -5,12 +5,15 @@
   "type": "module",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html",
-    "test": "jest"
+    "build": "parcel build index.html --dist-dir docs",
+    "test": "jest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d docs"
   },
   "author": "Deven Mahadik",
   "license": "ISC",
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "parcel": "^2.15.4"
   },
   "dependencies": {
