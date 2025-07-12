@@ -1,0 +1,9 @@
+.app {
+    background-color: #fdf5ee; /* Seashell */
+    color: #1a1a1a; /* rich dark gray */
+
+    &.dark {
+        background-color: #282421; /* Warm Gray*/
+        color: #e0e0e0; /* Soft Gray */
+    }
+}
