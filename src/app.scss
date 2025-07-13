@@ -6,4 +6,8 @@
         background-color: #282421; /* Warm Gray*/
         color: #e0e0e0; /* Soft Gray */
     }
+
+    .main-body {
+        min-height: calc(100vh - 200px);
+    }
 }
