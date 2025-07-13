@@ -1,0 +1,36 @@
+.contact-wrapper {
+    padding: 24px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: auto;
+
+    h1 {
+        font-size: 2rem; /* 32px */
+        margin-bottom: 16px;
+        color: #cc6a05;
+    }
+
+    h2 {
+        font-size: 1.5rem; /* 24px */
+        margin-top: 32px;
+        margin-bottom: 12px;
+        color: #cc6a05;
+    }
+
+    p {
+        font-size: 1.125rem;
+        margin-bottom: 16px;
+    }
+
+    a[href^="mailto:"] {
+        color: #ff8307;
+        font-weight: 500;
+        text-decoration: none;
+        text-underline-offset: 4px;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #cc6a05; /* slightly deeper saffron on hover */
+        }
+    }
+}
