@@ -1,9 +1,9 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
 import Header from "./components/Header/Header";
 import Home from "./Pages/Home/Home";
-import About from "./components/About";
+import AboutUs from "./Pages/AboutUs/AboutUs";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer/Footer";
 import Error from "./components/Error";
@@ -31,7 +31,7 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: "/about",
-                element: <Suspense fallback={<h1>Loading...</h1>}><About /></Suspense>,
+                element: <AboutUs />,
             },
             {
                 path: "/contact",
