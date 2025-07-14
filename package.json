@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --dist-dir docs",
+    "build": "parcel build index.html --dist-dir docs --public-url ./ && cp docs/index.html docs/404.html && echo > docs/.nojekyll",
     "test": "jest",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d docs"

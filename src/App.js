@@ -40,8 +40,9 @@ const appRouter = createBrowserRouter([
         ],
         errorElement: <Error />
     },
-    
-]);
+], {
+    basename: "/maharashtra-mandal-poland"
+});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
