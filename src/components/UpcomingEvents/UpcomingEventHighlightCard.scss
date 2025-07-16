@@ -1,0 +1,68 @@
+.upcoming-event-highlight-card {
+    width: 100%;
+    border-radius: 12px;
+    width: 250px;
+    margin: 0 auto 25px auto;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    background-color: #fff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-sizing: border-box;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (min-width: 600px) {
+        margin: 0;
+    }
+
+    .event-image-wrapper {
+        width: 100%;
+        height: 160px;
+        background-color: #d9d9d9;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .event-details-wrapper {
+        padding: 16px 20px;
+        color: #1a1a1a;
+
+        .event-heading {
+            font-size: 1.5rem;
+            color: #f57c00;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .event-date,
+        .event-venue {
+            font-size: 1.125rem;
+            color: #444;
+            margin-bottom: 6px;
+        }
+    }
+}
+
+.dark {
+    .upcoming-event-highlight-card {
+        background-color: #3a332d;
+
+        .event-details-wrapper {
+            color: #e0e0e0;
+
+            .event-heading {
+                color: #ffad4d;
+            }
+
+            .event-date,
+            .event-venue {
+                color: #ccc;
+            }
+        }
+    }
+}

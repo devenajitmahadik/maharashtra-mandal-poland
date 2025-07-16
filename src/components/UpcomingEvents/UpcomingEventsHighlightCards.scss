@@ -1,0 +1,45 @@
+.upcoming-events-cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    margin: 0 auto;
+    justify-items: center;
+
+    @media (min-width: 768px) {
+        gap: 30px;
+    }
+}
+
+.no-events-message {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 32px 24px;
+    margin: 32px auto 0 auto;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+    p:first-child {
+        font-size: 1.75rem;
+        color: #ff8307;
+        margin-bottom: 8px;
+    }
+
+    p:last-child {
+        font-size: 1.2rem;
+        color: #444;
+    }
+}
+
+.dark {
+    .no-events-message {
+        background-color: #3a332d;
+
+        p:first-child {
+            color: #ffad4d;
+        }
+
+        p:last-child {
+            color: #ccc;
+        }
+    }
+}
