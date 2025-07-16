@@ -6,7 +6,7 @@ import Home from "./Pages/Home/Home";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import ContactUs from "./Pages/ContactUs/ContactUs";
 import Footer from "./components/Footer/Footer";
-import Error from "./components/Error";
+import Error from "./Pages/Error/Error";
 
 import "./app.scss";
 
@@ -38,7 +38,7 @@ const appRouter = createBrowserRouter([
                 element: <ContactUs />,
             },
         ],
-        errorElement: <Error />
+        errorElement: <Error isDarkMode={false} />
     },
 ], {
     basename: "/maharashtra-mandal-poland"
