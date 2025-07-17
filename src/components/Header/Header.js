@@ -1,15 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router";
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faMoon, faSun, faTimes, } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { navigationList } from "../../constants/header";
 import { textToId } from "../../utils/helper";
 import './header.scss';
+import { ThemeContext } from "../../context/ThemeContext";
 
 const logo = new URL("../../../assets/logo.png", import.meta.url).href;
 
 const Header = () => {
     const navigate = useNavigate();
+    const { isDarkMode, toggleTheme } = useContext(ThemeContext);
     const [menuOpen, setMenuOpen] = useState(false);
 
     // ✅ Close mobile menu when screen becomes large (desktop)
@@ -33,6 +35,19 @@ const Header = () => {
         setMenuOpen((prev) => !prev);
     };
 
+    const getThemeToggleButtons = () => {
+        // return <FontAwesomeIcon
+        //         title={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
+        //         className="theme-toggle" onClick={toggleTheme}
+        //         icon={isDarkMode ? faSun : faMoon}
+        //     />
+        return <div
+                title={`Switch to ${isDarkMode ? 'light' : 'dark'} mode`}
+                className="theme-toggle"
+                onClick={toggleTheme}
+            >{isDarkMode ? '☀️' : '🌙'}</div>
+    }
+
     return (
         <div className="header">
             <div className="logo-container" onClick={handleLogoClick}>
@@ -52,6 +67,7 @@ const Header = () => {
                             return <li key={textToId(listItem.caption)}><Link to={listItem.navigateTo}>{listItem.caption}</Link></li>
                         })
                     }
+                    {getThemeToggleButtons()}
                 </ul>
             </div>
 
@@ -66,6 +82,7 @@ const Header = () => {
                                 </Link>
                             </li>
                         ))}
+                        {getThemeToggleButtons()}
                     </ul>
                 </div>
             )}
