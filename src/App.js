@@ -10,6 +10,7 @@ import Error from "./Pages/Error/Error";
 
 import "./app.scss";
 import { ThemeContext, ThemeProvider } from "./context/ThemeContext";
+const validBasename = "/maharashtra-mandal-poland";
 
 const AppLayout = () => {
     const { isDarkMode } = useContext(ThemeContext);
@@ -45,17 +46,31 @@ const appRouter = createBrowserRouter([
                 path: "/contact",
                 element: <ContactUs />,
             },
+            {
+                path: "*",
+                element: <ErrorWrapper />
+            } // Catch-all
         ],
         errorElement: <ErrorWrapper />
     },
 ], {
-    basename: "/maharashtra-mandal-poland"
+    basename: validBasename
 });
 
+const path = window.location.pathname;
+const isValidBasePath = path === validBasename || path.startsWith(validBasename + "/");
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(
-    <ThemeProvider>
-        <RouterProvider router={appRouter}></RouterProvider>
-    </ThemeProvider>
-);
+if (!isValidBasePath) {
+    root.render(
+        <ThemeProvider>
+            <ErrorWrapper />
+        </ThemeProvider>
+    );
+} else {
+    root.render(
+        <ThemeProvider>
+            <RouterProvider router={appRouter}></RouterProvider>
+        </ThemeProvider>
+    );
+}
